@@ -1,1 +1,18 @@
+#problem 1
+n= int(input())
+result= 1
+for i in range (1,n+1):
+    result *=i
+
+print(result)
+
+######
+
+#problem 2
+n = int(input())
+devisors = []
+for i in range(1, n + 1):
+    if n % i == 0:
+        devisors.append(i)
+print(devisors)
 
