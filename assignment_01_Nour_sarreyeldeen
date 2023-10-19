@@ -34,7 +34,7 @@ print(reversed_string)
 
 x = input()
 n = [int(z) for z in x.split(',') if int(z) % 2 == 0]
-print(n)
+print(n) 
 
 ######
 
