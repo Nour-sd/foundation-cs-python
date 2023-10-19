@@ -27,3 +27,17 @@ for i in m:
     reversed_string = i + reversed_string
 print(reversed_string)
 
+######
+
+#problem 4
+
+def  filter_even_numbers(n):
+  even_numbers = [num for num in n if num % 2 == 0]
+  return even_numbers
+
+x = input()
+n = [int(num) for num in x.split(',')]
+even_numbers_list = filter_even_numbers(n)
+print(even_numbers_list)
+
+
