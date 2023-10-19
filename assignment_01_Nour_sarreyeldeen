@@ -32,14 +32,9 @@ print(reversed_string)
 
 #problem 4
 
-def  filter(n):
-  even = [num for num in n if num % 2 == 0]
-  return even
-
 x = input()
-n = [int(num) for num in x.split(',')]
-even_list = filter(n)
-print(even_list)
+n = [int(z) for z in x.split(',') if int(z) % 2 == 0]
+print(n)
 
 ######
 
