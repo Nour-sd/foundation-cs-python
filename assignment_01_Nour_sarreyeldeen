@@ -40,4 +40,25 @@ n = [int(num) for num in x.split(',')]
 even_numbers_list = filter_even_numbers(n)
 print(even_numbers_list)
 
+######
+
+#problem 5 
+
+def strong_password(password):
+  x = len(password) >= 8
+  m = any(c.islower() for c in password)
+  s = any(c.isupper() for c in password)
+  e = any(c.isdigit() for c in password)
+  z = any(c in "#?!$" for c in password)
+
+  if x and m and s and e and z:
+      return "Strong password"
+  else:
+      return "Weak password"
+
+
+password = str(input("Enter a password: "))
+result = strong_password(password)
+print(result)  
+
 
