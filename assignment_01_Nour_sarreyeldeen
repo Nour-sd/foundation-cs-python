@@ -57,4 +57,17 @@ password = str(input("Enter a password: "))
 result = strong_password(password)
 print(result)  
 
+######
+
+#problem 6
+ip = (input("Enter the IP address: "))
+if ip.count(".") == 3:
+    ip = ip.split(".")
+    if ip[0].isdigit() and ip[1].isdigit() and ip[2].isdigit() and ip[3].isdigit():
+        if int(ip[0]) >= 0 and int(ip[0]) <= 255 and int(ip[1]) >= 0 and int(ip[1]) <= 255 and int(ip[2]) >= 0 and int(ip[2]) <= 255 and int(ip[3]) >= 0 and int(ip[3]) <= 255:
+            print("Valid IP address")
+        else:
+            print("Invalid IP address")
+      
+
 
