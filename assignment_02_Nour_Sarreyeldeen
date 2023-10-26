@@ -1,1 +1,58 @@
+def count_digits(n):
+    if n == 0:
+        return 0
+    return 1 + count_digits(n // 10)
 
+def find_max(arr):
+    if not arr:
+        return 0
+    if len(arr) == 1:
+        return arr[0]
+    else:
+        return max(arr[0], find_max(arr[1:]))
+
+def count_tags(html, tag):
+    opening_tag = f"<{tag}>"
+    closing_tag = f"</{tag}>"
+    open_index = html.find(opening_tag)
+    
+    if open_index == -1:
+        return 0
+    else:
+        close_index = html.find(closing_tag, open_index)
+        if close_index == -1:
+            return 0
+        else:
+            return 1 + count_tags(html[close_index + len(closing_tag):], tag)
+
+while True:
+    print("1. Count Digits")
+    print("2. Find Max")
+    print("3. Count Tags")
+    print("4. Exit")
+    
+    choice = input("Enter a choice: ")
+    
+    if choice == "1":
+        n = int(input("Enter an integer: "))
+        digit_count = count_digits(abs(n))
+        print(f"Number of digits: {digit_count}")
+    elif choice == "2":
+        arr = eval(input("Enter a list of integers: "))
+        max_val = find_max(arr)
+        print(f"Maximum value: {max_val}")
+    elif choice == "3":
+        html_File = ""
+        with open('CodeHtml.txt') as file:
+            for line in file :
+                html_File += line
+            
+        tag = input("Enter the tag to count: ")
+        tag_count = count_tags(html_File, tag)
+        print(f"Number of '{tag}' tags: {tag_count}")
+    
+    elif choice == "4":
+        break
+    
+    else:
+     print("error...")
