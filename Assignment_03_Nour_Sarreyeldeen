@@ -1,0 +1,97 @@
+students=[]
+
+def get_student_ID():
+    ID=int(input('Enter the student ID you want to search for '))
+    result = [n for n in students if ID == n["ID"]]
+    print(result)
+
+def get_all_students():
+    global students  
+    print("All Students")
+    for student in students:
+     print(f"Student {student['ID']} - Name: {student['name']}, Age: {student['age']}, Major: {student['major']}, GPA: {student['GPA']}")
+
+get_all_students()
+def get_student_by_major():
+    major = input("Enter the major of the student you are looking for ")
+    result = [s for s in students if major == s['major']]
+    print("\nStudents with this major")
+    for r in result :
+        print(r)
+
+def add_student():
+    student = {}
+    student["name"] = input("Enter Student Name ")
+    student["age"] = int(input("Enter Student Age "))
+    student["major"] = input("Enter Student Major ")
+    student["GPA"] = float(input("Enter Student GPA "))
+    student["ID"] = len(students)+1
+    students.append(student)
+
+def find_common_major():      
+    global students
+    common_majors = set()
+    for student in students:
+        common_majors.add(student["major"])
+    return list(common_majors)
+
+    
+def delete_student():
+    del_ID = int(input("Enter the ID of the student you want to delete"))
+    global students
+    students=[x for x in students if x['ID']!=del_ID]
+    print("student deleted.")
+
+def calculate_avarage_GPA():
+    total_sum = 0
+    count = len(students)
+    for student in students:
+        total_sum += student['GPA']
+    average = total_sum /count
+    print("Average GPA is ",average)
+
+def get_top_performance():
+    top_performer = None
+    max_gpa = 0
+
+    for student in students:
+        if student['GPA'] > max_gpa:
+            max_gpa = student['GPA']
+            top_performer = student
+
+    if top_performer:
+        print("The top performer is", top_performer)
+    else:
+     print("try again")
+while True:
+    print("\nMenu")
+    print("1.Get all students")
+    print("2.Search by student ID")
+    print("3.Add a student")
+    print("4.Delete a student")
+    print("5.Find common major")
+    print("6.Calculate average GPA")
+    print("7.find student by major")
+    print("8.get top performers")
+    print("9.Exit")
+    choice = int(input('\nEnter your choice :'))
+    if choice == 1:
+        get_all_students()
+    elif choice == 2:
+        get_student_ID()
+    elif choice == 3:
+        add_student()
+    elif choice == 4:
+        delete_student()
+    elif choice == 5:
+        find_common_major()
+    elif choice == 6:
+        calculate_avarage_GPA()
+    elif choice == 7:
+        get_student_by_major()
+    elif choice == 8:
+        get_top_performance()
+    elif choice == 9:
+        break
+else:
+    print("InvalID Choice! Please enter again.")
