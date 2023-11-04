@@ -33,7 +33,7 @@ def find_common_major():
     common_majors = set()
     for student in students:
         common_majors.add(student["major"])
-    return list(common_majors)
+    return (common_majors)
 
     
 def delete_student():
