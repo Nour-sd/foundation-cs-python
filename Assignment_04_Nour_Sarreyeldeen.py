@@ -177,38 +177,4 @@ while True:
     except ValueError:
         print("Invalid input. Please enter a number.")
 
-        #Task Class:
-
-#The Task class represents a task with attributes such as task_id, description, priority, and completed.
-#The __str__ method provides a formatted string representation of the task when it needs to be printed.
-#Node Class:
-
-#The Node class defines a node for a linked list. Each node contains a task and a reference to the next node in the list.
-#PriorityQueue Class:
-
-#The PriorityQueue class implements a priority queue using a linked list. Tasks are enqueued in order of priority.
-#The enqueue method adds tasks to the queue, maintaining order based on priority.
-#The dequeue method removes and returns the task with the highest priority from the queue.
-#The is_empty method checks if the priority queue is empty.
-#Stack Class:
-
-#The Stack class implements a stack using a linked list.
-#The push method adds tasks to the top of the stack.
-#The pop method removes and returns the task from the top of the stack.
-#The is_empty method checks if the stack is empty.
-#TaskManager Class:
-
-#The TaskManager class manages the overall functionality of the task management system.
-#It has a task_queue (PriorityQueue) to store tasks and a task_history (Stack) to track completed tasks.
-#The add_task method creates a new task and adds it to the priority queue.
-#The get_task method searches for a task by ID in the priority queue and prints its details.
-#The mark_highest_priority_completed method dequeues the task with the highest priority, marks it as completed, and adds it to the task history stack.
-#The display_all_tasks method prints details of all tasks in the priority queue.
-#The display_incomplete_tasks method prints details of tasks that are not completed in the priority queue.
-#The display_last_completed_task method prints details of the last completed task from the task history stack.
-#Sample Usage:
-
-#An instance of the TaskManager class (task_manager) is created.
-#A while loop presents a menu to the user, allowing them to interact with the task management system.
-#The user can add tasks, retrieve tasks by ID, mark tasks as completed, and display task details based on various criteria.
-#In summary, this code provides a simple command-line task management system using object-oriented programming principles and linked list data structures. It organizes tasks based on priority and completion status, demonstrating a modular and extensible design. The user interface loop ensures a user-friendly interaction while handling potential input errors.
+      
